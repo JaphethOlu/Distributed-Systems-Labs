@@ -52,7 +52,6 @@ func Worker(mapf func(string, string) []KeyValue,
 	for {
 
 		task, err := CallTaskRequest()
-		time.Sleep(100 * time.Millisecond)
 
 		if err != nil {
 			log.Println("the rpc server could not be reached")
@@ -61,7 +60,7 @@ func Worker(mapf func(string, string) []KeyValue,
 		if task.Type == Exit {
 			// Handle empty task
 			elapsed := time.Since(lastTaskTime)
-			if elapsed > 500*time.Millisecond {
+			if elapsed > time.Second {
 				os.Exit(0)
 			}
 		} else if task.Type == Map {
@@ -119,7 +118,6 @@ func Worker(mapf func(string, string) []KeyValue,
 			CallReduceResults(task.TaskNumber)
 			lastTaskTime = time.Now()
 		}
-		time.Sleep(100 * time.Millisecond)
 	}
 }
 
