@@ -8,7 +8,7 @@ All tests passed except for the Job Count test. I couldn't figure out how to get
 
 ## Lab 2 - Key/Value Server  (Completed)
 
-[Source](https://pdos.csail.mit.edu/6.824/labs/lab-kvsrv.html)
+All tests passed. [Source](https://pdos.csail.mit.edu/6.824/labs/lab-kvsrv.html)
 
 ## Lab 3 - Raft (Not Started)
 

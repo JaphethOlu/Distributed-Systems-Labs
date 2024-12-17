@@ -118,6 +118,7 @@ func Worker(mapf func(string, string) []KeyValue,
 			CallReduceResults(task.TaskNumber)
 			lastTaskTime = time.Now()
 		}
+		time.Sleep(350 * time.Millisecond)
 	}
 }
 
